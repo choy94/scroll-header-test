@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>one page header test</title>
   
+  <link rel="stylesheet" type="text/css" href="normalize.min.css">
   <link rel="stylesheet" href="./bootstrap.min.css">
 
   <style>
@@ -43,9 +44,9 @@
         height: 100%;
         padding-top: 150px;
         text-align: center;
-        background: #fff;
+        background: #fafafa;
       }
-
+/*
       .about-section {
         height: 100%;
         padding-top: 150px;
@@ -66,23 +67,85 @@
         text-align: center;
         background: #eee;
       }
-
+*/
       .portfolio-section {
-        height: 100%;
+        height: 3000px;
         padding-top: 150px;
         text-align: center;
-        background: #fff;
+        background: #555;
       }
 
-    </style>
+      .slider__text {
+        position: absolute;
+        bottom: calc(60px + 4vh);
+        left: calc(140px + 3vw);
+        z-index: 10;
+        font-size: 45pt;
+        text-transform: uppercase;
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        line-height: 55pt;
+        color: #333;
+        font-weight: 300;
+        text-align: left;
+      }
 
-  <script>
+      #portfolio>.container>h1 {
+        padding-top: 80px;
+      }
+
+      #intro>.container>.vert-text {
+        position: absolute;
+        bottom: calc(60px + 5vh);
+        right: calc(150px + 3vw);
+        width: 15rem;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        }
+
+        #intro>.container>.vert-text span {
+          display: block;
+          color: #333;
+          text-transform: uppercase;
+          line-height: 1.1;
+          -webkit-transform: rotate(-90deg) translateY(15rem);
+          transform: rotate(-90deg) translateY(15rem);
+          -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+          font-size: 1.35rem;
+        }
+
+        #intro>.container>.vert-text>span>a {
+          text-decoration: none;
+          color: #333;
+        }
+
+        #intro>.container>.vert-text>span>a:hover {
+          text-decoration: none;
+          color: grey;
+        }
+
+
+        /* Style the video: 100% width and height to cover the entire window */
+        #myVideo {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 900px;
+          min-width: 100%; 
+          min-height: 100%;
+        }
+
+  </style>
+
+<script>
   window.console = window.console || function(t) {};
 </script>
 
   
   
-  <script>
+<script>
   if (document.location.search.match(/type=embed/gi)) {
     window.parent.postMessage("resize", "*");
   }
@@ -116,13 +179,13 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#">Experience</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#">Feedback</a>
                     </li>
                     <li>
                       <a class="page-scroll" href="#portfolio">Portfolio</a>
@@ -137,18 +200,40 @@
     <!-- Intro Section -->
     <section id="intro" class="intro-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>One Page Website</h1>
-                    <p>I like clean code and I cannot lie</p>
-                    <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
-                </div>
+            <!--<div class="row">-->
+                <!--<div class="col-lg-12">-->
+                    <!--<h1>One Page Website</h1>
+                    <p>I like clean code and I cannot lie</p>-->
+                    <!--<a class="btn btn-default page-scroll" href="#portfolio">Scroll Down</a>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!-- The video -->
+            <video autoplay muted loop id="myVideo">
+              <source src="testvideo.mp4" type="video/mp4">
+            </video>
+
+            <script>
+            // Get the video
+            var video = document.getElementById("myVideo");
+          </script>
+
+            <div class="slider__text js-slider__text">
+              <div class="slider__text-line js-slider__text-line"><div>전체는 단순히</div></div>
+              <div class="slider__text-line js-slider__text-line"><div>부분의 합이 아니다.</div></div>
             </div>
+
+            <div class="vert-text">
+              <span>
+                <a class="page-scroll" href="#portfolio">Scroll Down</a>
+              </span>
+            </div>
+
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <!--<section id="about" class="about-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -156,10 +241,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
+    <!--<section id="services" class="services-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -167,10 +252,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <!--<section id="contact" class="contact-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -178,17 +263,19 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+            <!--<div class="row">-->
+                <!--<div class="col-lg-12">-->
                     <h1>Portfolio Section</h1>
-                </div>
-            </div>
+                    <h1>Portfolio Section</h1>
+                    <h1>Portfolio Section</h1>
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </section>
 
@@ -225,6 +312,8 @@ $(function() {
     });
 });
     </script>
+
  
+
 </body>
 </html>
